@@ -1,4 +1,6 @@
 (() => {
+    const workFromHomeId = "105806"
+    const workFromOfficeId = "105041"
     const rows =  Array.from(document.querySelectorAll('.hours-report tr'));
     // first row is the table header
     for(let i = 1; i< rows.length; i++) {
@@ -17,6 +19,6 @@
         }
         rows[i].querySelector('.checkIn input').value = '10:00'
         rows[i].querySelector('.checkOut input').value = '19:00'
+        rows[i].querySelector('.missing select').value = date.getDay() % 2 ? workFromHomeId : workFromOfficeId
         } 
-
 })();
